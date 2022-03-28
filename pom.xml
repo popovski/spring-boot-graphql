@@ -63,6 +63,13 @@
 			<artifactId>graphiql-spring-boot-starter</artifactId>
 			<version>5.0.2</version>
 		</dependency>
+		
+		<!-- LOMBOK we get lombock from spring parent because of this - scope provided -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
