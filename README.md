@@ -1,29 +1,28 @@
-# Mutation new application
+# Mutation new book
 mutation {
-  newApplication (
-    name:"name value", 
-    owner: "owner value", 
-    description: "description value") {
-    id,
-    name
+  newBook(title: "title",description: "description") {
+    id
+    title
+    description
   }
 }
 
-# Mutation update application
+
+# Mutation update book
 mutation {
-  updateApplicationOwner (
-    newOwner:"name value1", 
-    id: 1 
+  updateBook (
+    newTitle:"new title", 
+    id: 1
     ) {
     id,
-    name
+    title
   }
 }
 
 # Query
 
 query {
-  findAllApplications {
-    name
+  findAllBooks {
+    title
   }
 }
