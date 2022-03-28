@@ -13,7 +13,7 @@ type Book {
 }
 
 type Query {
-  findAllApplications: [Application]!
+  findAllApplications(pageNumber: Int , pageSize: Int): [Application]!
   countApplications: Long!
   findAllBooks: [Book]!
   countBooks: Long!
