@@ -11,7 +11,7 @@ type Student {
 }
 
 type Query {
-  findAllApplications: [Application]!
+  findAllApplications(pageNumber: Int , pageSize: Int): [Application]!
   countApplications: Long!
   findAllStudents: [Student]!
 }
