@@ -1,10 +1,3 @@
-type Application {
-  id: ID!
-  name: String!
-  owner: String!
-  description: String!
-}
-
 type Book {
   id: ID!
   uuid: String!
@@ -13,14 +6,6 @@ type Book {
 }
 
 type Query {
-  findAllApplications(pageNumber: Int , pageSize: Int): [Application]!
-  countApplications: Long!
-  findAllBooks: [Book]!
+  findAllBooks(pageNumber: Int , pageSize: Int): [Book]!
   countBooks: Long!
-}
-
-type Mutation {
-  newApplication(name: String!, owner: String!, description: String!) : Application!
-  deleteApplication(id:ID!) : Boolean
-  updateApplicationOwner(newOwner: String!, id:ID!) : Application!
 }
