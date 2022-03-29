@@ -7,11 +7,17 @@ type Book {
 
 type Query {
   findAllBooks(pageNumber: Int , pageSize: Int): [Book]!
+  findByUuid(uuid: String!) : Book
   countBooks: Long!
 }
 
+input BookInput {
+  title: String!,
+  description: String!
+}
+
 type Mutation {
-  newBook(title: String!, description: String!) : Book!
+  newBook(book:BookInput) : Book!
   deleteBook(uuid:String!) : Boolean
-  updateBook(newTitle: String,newDescription : String, uuid:String!) : Book!
+  updateBook(book:BookInput, uuid:String!) : Book!
 }

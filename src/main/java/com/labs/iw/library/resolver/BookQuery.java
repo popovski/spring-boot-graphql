@@ -2,6 +2,7 @@ package com.labs.iw.library.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.labs.iw.library.entity.Book;
+import com.labs.iw.library.exception.BookNotFoundException;
 import com.labs.iw.library.repository.BookRepository;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,10 @@ public class BookQuery implements GraphQLQueryResolver {
 		} else {
 			return bookRepository.findAll();
 		}
+	}
+
+	public Book findByUuid(String uuid) {
+		return bookRepository.findByUuid(uuid).orElseThrow(() -> new BookNotFoundException("Book not found"));
 	}
 
 	public long countBooks() {

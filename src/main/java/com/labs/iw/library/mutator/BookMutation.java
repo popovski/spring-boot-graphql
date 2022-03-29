@@ -1,6 +1,7 @@
 package com.labs.iw.library.mutator;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import com.labs.iw.library.dto.BookDTO;
 import com.labs.iw.library.entity.Book;
 import com.labs.iw.library.exception.BookNotFoundException;
 import com.labs.iw.library.repository.BookRepository;
@@ -15,11 +16,11 @@ public class BookMutation implements GraphQLMutationResolver {
 	@Autowired
 	private BookRepository bookRepository;
 
-	public Book newBook(String title, String description) {
+	public Book newBook(BookDTO bookDTO) {
 		Book book = new Book();
 
-		book.setTitle(title);
-		book.setDescription(description);
+		book.setTitle(bookDTO.getTitle());
+		book.setDescription(bookDTO.getDescription());
 
 		bookRepository.save(book);
 		return book;
@@ -36,15 +37,15 @@ public class BookMutation implements GraphQLMutationResolver {
 		}
 	}
 
-	public Book updateBook(String newTitle, String newDescription,String uuid) {
+	public Book updateBook(BookDTO bookDTO,String uuid) {
 		Book book = bookRepository.findByUuid(uuid).orElseThrow(() -> new BookNotFoundException("Book not found"));
 
-		if(!Objects.isNull(newTitle)) {
-			book.setTitle(newTitle);
+		if(!Objects.isNull(bookDTO.getTitle())) {
+			book.setTitle(bookDTO.getTitle());
 		}
 
-		if(!Objects.isNull(newDescription)) {
-			book.setDescription(newDescription);
+		if(!Objects.isNull(bookDTO.getDescription())) {
+			book.setDescription(bookDTO.getDescription());
 		}
 
 		bookRepository.save(book);
