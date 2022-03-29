@@ -34,7 +34,13 @@ These instructions will get you a copy of the project up and running on your loc
 	Mutation new book
 	
 	mutation {
-	  newBook(title: "title",description: "description") {
+	  newBook(book:
+		{
+		  title: "title",
+		  description: "description"
+		}
+	  )
+	  {
 		id
 		title
 		description
@@ -42,12 +48,20 @@ These instructions will get you a copy of the project up and running on your loc
 	}
 
 
+
 	Mutation update book
 	
 	mutation {
-	  updateBook(newTitle: "new title", uuid: "02b7f0d44ac848fd8a3fe3a3e29576e8") {
+	  updateBook(book:
+		{
+		  title: "newTitle",
+		  description: "newDescription"
+		}, uuid:"67b68681d82140f2a27606f79a424511"
+	  )
+	  {
 		id
 		title
+		description
 	  }
 	}
 
@@ -71,6 +85,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 	query {
 	  findAllBooks(pageNumber:0,pageSize:2) {
+		id
+		title
+	  }
+	}
+	
+	Get Book by UUID
+	
+	
+	query {
+	  findByUuid(uuid:"") {
 		id
 		title
 	  }
