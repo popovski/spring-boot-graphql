@@ -12,12 +12,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-* Clone this repository
-* If you are using IDE open it or if you want to use CLI go to the project directory and write mvn install
+* Clone repo "git clone git@github.com:popovski/spring-boot-graphql.git"
+* Import the project in any IDE
 
 ### Build and Start the project
 
-* If you are using IDE just run it as a Spring Application or if you are using CLI run mvn spring-boot:run
+* ./mvnw clean package
+* ./mvnw spring-boot:run
 * Open web browser and navigate to http://localhost:8080/graphiql, you should see the GraphQL interactive UI.
 
 ## Built With
