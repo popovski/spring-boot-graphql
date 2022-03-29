@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @Component
 public class BookMutation implements GraphQLMutationResolver {
@@ -24,13 +25,19 @@ public class BookMutation implements GraphQLMutationResolver {
 		return book;
 	}
 
-	public boolean deleteBook(Long id) {
-		bookRepository.deleteById(id);
-		return true;
+	public boolean deleteBook(String uuid) {
+		Optional<Book> book = bookRepository.findByUuid(uuid);
+		if(book.isPresent()) {
+			Book entity = book.get();
+			bookRepository.delete(entity);
+			return true;
+		} else {
+			throw new BookNotFoundException("Book not found");
+		}
 	}
 
-	public Book updateBook(String newTitle, String newDescription,Long id) {
-		Book book = bookRepository.findById(id).orElseThrow(() -> new BookNotFoundException("Book not found",id));
+	public Book updateBook(String newTitle, String newDescription,String uuid) {
+		Book book = bookRepository.findByUuid(uuid).orElseThrow(() -> new BookNotFoundException("Book not found"));
 
 		if(!Objects.isNull(newTitle)) {
 			book.setTitle(newTitle);
