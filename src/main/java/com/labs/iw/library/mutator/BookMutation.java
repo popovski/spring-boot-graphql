@@ -1,10 +1,10 @@
 package com.labs.iw.library.mutator;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.labs.iw.library.dto.BookDTO;
 import com.labs.iw.library.entity.Book;
 import com.labs.iw.library.exception.BookNotFoundException;
 import com.labs.iw.library.repository.BookRepository;
+import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

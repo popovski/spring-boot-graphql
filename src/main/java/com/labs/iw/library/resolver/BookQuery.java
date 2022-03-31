@@ -1,9 +1,10 @@
 package com.labs.iw.library.resolver;
 
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+
 import com.labs.iw.library.entity.Book;
 import com.labs.iw.library.exception.BookNotFoundException;
 import com.labs.iw.library.repository.BookRepository;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
