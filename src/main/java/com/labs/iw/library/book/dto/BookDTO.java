@@ -1,4 +1,4 @@
-package com.labs.iw.library.dto;
+package com.labs.iw.library.book.dto;
 
 import lombok.Data;
 

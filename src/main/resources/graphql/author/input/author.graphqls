@@ -1,0 +1,4 @@
+input AuthorInput {
+    firstName: String!,
+    lastName: String!
+}

@@ -1,4 +1,4 @@
-package com.labs.iw.library.utils;
+package com.labs.iw.library.infrastructure.utils;
 
 import java.io.Serializable;
 import java.time.ZoneOffset;
