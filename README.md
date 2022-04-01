@@ -45,7 +45,7 @@ H2 Console -> http://localhost:8080/h2-console
 		{
 		  title: "title",
 		  description: "description"
-		}
+    },authorUuids:"a9213848-7218-4309-a6cb-deee307e93f3"
 	  )
 	  {
 		id
