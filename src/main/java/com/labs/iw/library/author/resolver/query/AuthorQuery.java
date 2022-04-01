@@ -1,4 +1,4 @@
-package com.labs.iw.library.author.resolver;
+package com.labs.iw.library.author.resolver.query;
 
 import com.labs.iw.library.author.entity.Author;
 import com.labs.iw.library.author.repository.AuthorRepository;
