@@ -9,6 +9,7 @@ import com.labs.iw.library.book.repository.BookRepository;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +37,10 @@ public class BookMutation implements GraphQLMutationResolver {
 			authors.add(author);
 		}
 
-		book.setAuthors(authors);
-
+		if(!CollectionUtils.isEmpty(authors)) {
+			book.setAuthors(authors);
+		}
+		
 		bookRepository.save(book);
 		return book;
 	}
