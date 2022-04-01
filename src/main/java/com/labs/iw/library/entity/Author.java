@@ -15,17 +15,17 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "book")
-public class Book extends BaseEntity {
+public class Author extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
-	@Column(name = "title")
-	private String title;
+	@Column(name = "firstName")
+	private String firstName;
 	
 	@NotNull
-	@Column(name = "description", length = 5000)
-	private String description;
+	@Column(name = "lastName", length = 5000)
+	private String lastName;
 	
 	@ManyToMany(fetch=FetchType.LAZY)
-	private List<Book> authors;
+	private List<Author> books;
 }
