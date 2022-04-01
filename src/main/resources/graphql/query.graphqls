@@ -1,0 +1,5 @@
+type Query {
+  findAllBooks(pageNumber: Int , pageSize: Int): [Book]!
+  findByUuid(uuid: String!) : Book
+  countBooks: Long!
+}

@@ -1,0 +1,5 @@
+type Mutation {
+  newBook(book:BookInput) : Book!
+  deleteBook(uuid:String!) : Boolean
+  updateBook(book:BookInput, uuid:String!) : Book!
+}
