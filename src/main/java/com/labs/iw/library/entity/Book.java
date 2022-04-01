@@ -27,5 +27,5 @@ public class Book extends BaseEntity {
 	private String description;
 	
 	@ManyToMany(fetch=FetchType.LAZY)
-	private List<Book> authors;
+	private List<Author> authors;
 }

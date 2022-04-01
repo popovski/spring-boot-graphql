@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "book")
+@Table(name = "author")
 public class Author extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
@@ -26,6 +26,6 @@ public class Author extends BaseEntity {
 	@Column(name = "lastName", length = 5000)
 	private String lastName;
 	
-	@ManyToMany(fetch=FetchType.LAZY)
-	private List<Author> books;
+	@ManyToMany(mappedBy="authors", fetch=FetchType.LAZY)
+	private List<Book> books;
 }
