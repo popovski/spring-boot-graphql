@@ -30,17 +30,17 @@ public class BookMutation implements GraphQLMutationResolver {
 		book.setTitle(bookDTO.getTitle());
 		book.setDescription(bookDTO.getDescription());
 
-		List<Author> authors = new ArrayList<>();
+		if(!CollectionUtils.isEmpty(authorUuids)) {
+			List<Author> authors = new ArrayList<>();
 
-		for(String uuid : authorUuids) {
-			Author author = authorRepository.findByUuid(uuid).orElseThrow(() -> new ResourceNotFoundException("Author not found"));
-			authors.add(author);
-		}
+			for(String uuid : authorUuids) {
+				Author author = authorRepository.findByUuid(uuid).orElseThrow(() -> new ResourceNotFoundException("Author not found"));
+				authors.add(author);
+			}
 
-		if(!CollectionUtils.isEmpty(authors)) {
 			book.setAuthors(authors);
 		}
-		
+
 		bookRepository.save(book);
 		return book;
 	}
