@@ -1,5 +1,9 @@
 type Query {
   findAllBooks(pageNumber: Int , pageSize: Int): [Book]!
-  findByUuid(uuid: String!) : Book
+  findBookByUuid(uuid: String!) : Book
   countBooks: Long!
+
+  findAllAuthors(pageNumber: Int,pageSize : Int) : [Author]!
+  findAuthorByUuid(uuid:String!) : Author
+  countAuthors: Long!
 }

@@ -1,9 +1,9 @@
-package com.labs.iw.library.resolver;
+package com.labs.iw.library.book.resolver;
 
 
-import com.labs.iw.library.entity.Book;
-import com.labs.iw.library.exception.BookNotFoundException;
-import com.labs.iw.library.repository.BookRepository;
+import com.labs.iw.library.book.entity.Book;
+import com.labs.iw.library.infrastructure.exception.ResourceNotFoundException;
+import com.labs.iw.library.book.repository.BookRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +23,8 @@ public class BookQuery implements GraphQLQueryResolver {
 		}
 	}
 
-	public Book findByUuid(String uuid) {
-		return bookRepository.findByUuid(uuid).orElseThrow(() -> new BookNotFoundException("Book not found"));
+	public Book findBookByUuid(String uuid) {
+		return bookRepository.findByUuid(uuid).orElseThrow(() -> new ResourceNotFoundException("Book not found"));
 	}
 
 	public long countBooks() {

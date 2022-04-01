@@ -1,9 +1,9 @@
-package com.labs.iw.library.mutator;
+package com.labs.iw.library.book.mutator;
 
-import com.labs.iw.library.dto.BookDTO;
-import com.labs.iw.library.entity.Book;
-import com.labs.iw.library.exception.BookNotFoundException;
-import com.labs.iw.library.repository.BookRepository;
+import com.labs.iw.library.book.dto.BookDTO;
+import com.labs.iw.library.book.entity.Book;
+import com.labs.iw.library.infrastructure.exception.ResourceNotFoundException;
+import com.labs.iw.library.book.repository.BookRepository;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -33,12 +33,12 @@ public class BookMutation implements GraphQLMutationResolver {
 			bookRepository.delete(entity);
 			return true;
 		} else {
-			throw new BookNotFoundException("Book not found");
+			throw new ResourceNotFoundException("Book not found");
 		}
 	}
 
 	public Book updateBook(BookDTO bookDTO,String uuid) {
-		Book book = bookRepository.findByUuid(uuid).orElseThrow(() -> new BookNotFoundException("Book not found"));
+		Book book = bookRepository.findByUuid(uuid).orElseThrow(() -> new ResourceNotFoundException("Book not found"));
 
 		if(!Objects.isNull(bookDTO.getTitle())) {
 			book.setTitle(bookDTO.getTitle());

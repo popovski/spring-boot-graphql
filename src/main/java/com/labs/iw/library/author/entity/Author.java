@@ -1,4 +1,4 @@
-package com.labs.iw.library.entity;
+package com.labs.iw.library.author.entity;
 
 import java.util.List;
 import javax.persistence.Column;
@@ -7,7 +7,9 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import com.labs.iw.library.utils.BaseEntity;
+
+import com.labs.iw.library.book.entity.Book;
+import com.labs.iw.library.infrastructure.utils.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 

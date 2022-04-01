@@ -2,4 +2,9 @@ type Mutation {
   newBook(book:BookInput) : Book!
   deleteBook(uuid:String!) : Boolean
   updateBook(book:BookInput, uuid:String!) : Book!
+
+  newAuthor(author:AuthorInput) : Author!
+  deleteAuthor(uuid:String!) : Boolean
+  updateAuthor(author:AuthorInput,uuid:String!) : Author!
+
 }

@@ -1,10 +1,9 @@
-package com.labs.iw.library.repository;
+package com.labs.iw.library.book.repository;
 
-import com.labs.iw.library.entity.Book;
-import java.util.List;
+import com.labs.iw.library.book.entity.Book;
+
 import java.util.Optional;
 
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

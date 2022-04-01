@@ -1,4 +1,4 @@
-package com.labs.iw.library.exception;
+package com.labs.iw.library.infrastructure.exception;
 
 import graphql.ErrorType;
 import graphql.GraphQLError;
@@ -8,15 +8,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BookNotFoundException extends RuntimeException implements GraphQLError {
+public class ResourceNotFoundException extends RuntimeException implements GraphQLError {
 	private Map<String, Object> extensions = new HashMap<>();
 
-	public BookNotFoundException(String message, Long invalidBookId) {
+	public ResourceNotFoundException(String message, String invalidUuid) {
 		super(message);
-		extensions.put("invalidBookId", invalidBookId);
+		extensions.put("invalidUuid", invalidUuid);
 	}
 
-	public BookNotFoundException(String message) {
+	public ResourceNotFoundException(String message) {
 		super(message);
 	}
 
