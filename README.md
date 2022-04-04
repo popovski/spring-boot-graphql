@@ -83,7 +83,7 @@ H2 Console -> http://localhost:8080/h2-console
 	mutation {
 		newAuthor(author: { firstName: "title", lastName: "description" }) 
 		{
-			id
+			uuid
 			firstName
 		}
 	}
@@ -148,7 +148,8 @@ H2 Console -> http://localhost:8080/h2-console
 	
 	query {
 	  findAllAuthors(pageNumber:0,pageSize:2) {
-		id
+		id,
+		uuid
 	  }
 	}
 	
@@ -157,6 +158,7 @@ H2 Console -> http://localhost:8080/h2-console
 	query {
 	  findAuthorByUuid(uuid:"") {
 		id
+		uuid
 		firstName
 	  }
 	}
