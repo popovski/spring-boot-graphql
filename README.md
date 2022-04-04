@@ -38,7 +38,7 @@ H2 Console -> http://localhost:8080/h2-console
 # Mutations
 
 
-	* Mutation new book
+	# Mutation new book
 	
 	mutation {
 	  newBook(book:
@@ -56,7 +56,7 @@ H2 Console -> http://localhost:8080/h2-console
 
 
 
-	* Mutation update book
+	# Mutation update book
 	
 	mutation {
 	  updateBook(book:
@@ -72,13 +72,13 @@ H2 Console -> http://localhost:8080/h2-console
 	  }
 	}
 
-	* Mutation delete book
+	# Mutation delete book
 
 	mutation {
 	  deleteBook(uuid: "02b7f0d44ac848fd8a3fe3a3e29576e8") 
 	}
 	
-	* Mutation create author
+	# Mutation create author
 	
 	mutation {
 		newAuthor(author: { firstName: "title", lastName: "description" }) 
@@ -88,7 +88,7 @@ H2 Console -> http://localhost:8080/h2-console
 		}
 	}
 	
-	* Mutation update author
+	# Mutation update author
 	
 	mutation {
 		updateAuthor(author: { firstName: "newTitle", lastName: "newDescription" },uuid:"") 
@@ -98,7 +98,7 @@ H2 Console -> http://localhost:8080/h2-console
 		}
 	}
 	
-	* Mutation delete author
+	# Mutation delete author
 	
 	mutation {
 		deleteAuthor(uuid:"")
@@ -109,7 +109,7 @@ H2 Console -> http://localhost:8080/h2-console
 	
 # Query
 
-	* Get All books
+	# Get All books
 
 	query {
 	  findAllBooks {
@@ -117,7 +117,7 @@ H2 Console -> http://localhost:8080/h2-console
 	  }
 	}
 
-	* Get all books with pagination
+	# Get all books with pagination
 
 	query {
 	  findAllBooks(pageNumber:0,pageSize:2) {
@@ -126,7 +126,7 @@ H2 Console -> http://localhost:8080/h2-console
 	  }
 	}
 	
-	* Get Book by UUID
+	# Get Book by UUID
 	
 	
 	query {
@@ -136,7 +136,7 @@ H2 Console -> http://localhost:8080/h2-console
 	  }
 	}
 	
-	* Get All authors
+	# Get All authors
 	
 	query {
 	  findAllAuthors {
@@ -144,7 +144,7 @@ H2 Console -> http://localhost:8080/h2-console
 	  }
 	}
 	
-	* Get all authors with pagination
+	# Get all authors with pagination
 	
 	query {
 	  findAllAuthors(pageNumber:0,pageSize:2) {
@@ -152,7 +152,7 @@ H2 Console -> http://localhost:8080/h2-console
 	  }
 	}
 	
-	* Get Author by UUID
+	# Get Author by UUID
 
 	query {
 	  findAuthorByUuid(uuid:"") {
