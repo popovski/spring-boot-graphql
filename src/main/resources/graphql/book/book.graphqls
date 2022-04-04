@@ -3,4 +3,5 @@ type Book {
   uuid: String!
   title: String!
   description: String!
+  authors : [Author]
 }
