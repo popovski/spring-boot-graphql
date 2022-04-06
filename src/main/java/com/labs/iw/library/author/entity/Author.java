@@ -28,6 +28,6 @@ public class Author extends BaseEntity {
 	@Column(name = "lastName", length = 5000)
 	private String lastName;
 	
-	@ManyToMany(mappedBy="authors", fetch=FetchType.LAZY)
+	@ManyToMany(mappedBy="authors", fetch=FetchType.EAGER)
 	private List<Book> books;
 }
