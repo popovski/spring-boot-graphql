@@ -49,6 +49,7 @@ H2 Console -> http://localhost:8080/h2-console
 	  )
 	  {
 		id
+		uuid
 		title
 		description
 	  }
@@ -67,6 +68,7 @@ H2 Console -> http://localhost:8080/h2-console
 	  )
 	  {
 		id
+		uuid
 		title
 		description
 	  }
@@ -84,7 +86,9 @@ H2 Console -> http://localhost:8080/h2-console
 		newAuthor(author: { firstName: "title", lastName: "description" }) 
 		{
 			id
+			uuid
 			firstName
+			lastName
 		}
 	}
 	
@@ -94,7 +98,9 @@ H2 Console -> http://localhost:8080/h2-console
 		updateAuthor(author: { firstName: "newTitle", lastName: "newDescription" },uuid:"") 
 		{
 			id
+			uuid
 			firstName
+			lastName
 		}
 	}
 	
@@ -113,6 +119,7 @@ H2 Console -> http://localhost:8080/h2-console
 
 	query {
 	  findAllBooks {
+	        uuid
 		title
 	  }
 	}
@@ -122,6 +129,7 @@ H2 Console -> http://localhost:8080/h2-console
 	query {
 	  findAllBooks(pageNumber:0,pageSize:2) {
 		id
+		uuid
 		title
 	  }
 	}
@@ -132,6 +140,7 @@ H2 Console -> http://localhost:8080/h2-console
 	query {
 	  findBookByUuid(uuid:"") {
 		id
+		uuid
 		title
 	  }
 	}
@@ -141,6 +150,9 @@ H2 Console -> http://localhost:8080/h2-console
 	query {
 	  findAllAuthors {
 		id
+		uuid
+		firstName
+		lastName
 	  }
 	}
 	
@@ -149,6 +161,9 @@ H2 Console -> http://localhost:8080/h2-console
 	query {
 	  findAllAuthors(pageNumber:0,pageSize:2) {
 		id
+		uuid
+		firstName
+		lastName
 	  }
 	}
 	
@@ -157,6 +172,8 @@ H2 Console -> http://localhost:8080/h2-console
 	query {
 	  findAuthorByUuid(uuid:"") {
 		id
+		uuid
 		firstName
+		lastName
 	  }
 	}
