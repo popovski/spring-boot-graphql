@@ -3,4 +3,5 @@ type Author {
     uuid: String!
     firstName: String!
     lastName: String!
+	books : [Book]
 }

@@ -1,5 +1,5 @@
 type Mutation {
-  newBook(book:BookInput,authorUuids:[String!]) : Book!
+  newBook(book:BookInput,authorUuidList:[String!]) : Book!
   deleteBook(uuid:String!) : Boolean
   updateBook(book:BookInput, uuid:String!) : Book!
 
