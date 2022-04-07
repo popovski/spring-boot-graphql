@@ -5,3 +5,10 @@ type Author {
     lastName: String!
 	books : [Book]
 }
+
+type AuthorDTO {
+    id: ID!
+    uuid: String!
+    firstName: String!
+    lastName: String!
+}
