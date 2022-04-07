@@ -40,14 +40,10 @@ public class DataLoaderRegistryFactory {
 	}
 
 	private DataLoader<Long, List<Author>> createAuthorDataLoader() {
-
-
 		MappedBatchLoader<Long, List<Author>> customerMappedBatchLoader =
 				(Set<Long> bookIdList) -> CompletableFuture.supplyAsync(() -> {
-					List<Author> customers = authorRepository.findAllById(bookIdList);
-					
-					customers.get(0).getBooks();
-					
+					List<Author> customers = authorRepository.findAuthorsByBookIds(bookIdList);
+
 					Map<Long, List<Author>> groupByAccountId =
 							customers.stream().collect(Collectors.groupingBy(cust -> cust.getId()));
 
