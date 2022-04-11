@@ -1,4 +1,7 @@
+# Sample comment for all Queries
+
 type Query {
+# comment for findAllBooks query
   findAllBooks(pageNumber: Int , pageSize: Int): [Book]!
   findBookByUuid(uuid: String!) : Book
   countBooks: Long!
